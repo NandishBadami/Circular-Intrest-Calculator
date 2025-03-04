@@ -7,6 +7,7 @@ document.querySelector('button').addEventListener('click',  function() {
     let days = Math.round(time/(1000*3600*24))
     var amount = Number(document.querySelector('#amount').value)
     var intrest = 0
+    document.querySelector('#days').textContent = days;
     while(days>366) {
         if(amount >= 20000) {
             intrest += Math.round((amount + intrest) * 0.02 / 30 * 366);
