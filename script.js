@@ -10,17 +10,17 @@ document.querySelector('button').addEventListener('click',  function() {
     document.querySelector('#days').textContent = days;
     while(days>366) {
         if(amount >= 20000) {
-            intrest += Math.round((amount + intrest) * 0.02 / 30 * 366);
+            intrest += Math.round((amount + intrest) * 0.02 / 30.5 * 366);
             days -= 366;
         } else {
-            intrest += Math.round((amount + intrest) * 0.03 / 30 * 366);
+            intrest += Math.round((amount + intrest) * 0.03 / 30.5 * 366);
             days -= 366;
         }
     }
     if(amount >= 20000) {
-        intrest += Math.round((amount + intrest) * 0.02 / 30 * days);
+        intrest += Math.round((amount + intrest) * 0.02 / 30.5 * days);
     } else {
-        intrest += Math.round((amount + intrest) * 0.03 / 30 * days);
+        intrest += Math.round((amount + intrest) * 0.03 / 30.5 * days);
     }
     var total_amount = amount + intrest;
     document.querySelector('.amount').textContent = `Amount: ${amount}`;
