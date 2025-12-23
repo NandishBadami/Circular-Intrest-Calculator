@@ -8,10 +8,6 @@ document.querySelector('button').addEventListener('click',  function() {
     var amount = Number(document.querySelector('#amount').value)
     var intrest = 0;
     if(days==365) days += 1;
-    else if(days % 2 == 0) {
-        console.log(true);
-        days += 1;
-    }
     document.querySelector('#days').textContent = days;
     while(days>366) {
         if(amount >= 20000) {
@@ -27,11 +23,9 @@ document.querySelector('button').addEventListener('click',  function() {
     } else {
         intrest += Math.round((amount + intrest) * 0.03 / 30.5 * days);
     }
+    if(intrest % 10 < 5)
     var total_amount = amount + intrest;
     document.querySelector('.amount').textContent = `Amount: ${amount}`;
     document.querySelector('#intrest').textContent = `Intrest: ${intrest}`;
     document.querySelector('#total-amount').textContent = `Total Amount: ${total_amount}`;
 });
-
-
-
