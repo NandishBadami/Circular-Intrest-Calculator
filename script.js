@@ -6,8 +6,9 @@ document.querySelector('button').addEventListener('click',  function() {
     let time = received_date.getTime() - issued_date.getTime();
     let days = Math.round(time/(1000*3600*24))
     var amount = Number(document.querySelector('#amount').value)
-    var intrest = 0
+    var intrest = 0;
     if(days==365) days += 1;
+    else if(days % 2 == 0) days++;
     document.querySelector('#days').textContent = days;
     while(days>366) {
         if(amount >= 20000) {
@@ -28,3 +29,4 @@ document.querySelector('button').addEventListener('click',  function() {
     document.querySelector('#intrest').textContent = `Intrest: ${intrest}`;
     document.querySelector('#total-amount').textContent = `Total Amount: ${total_amount}`;
 });
+
