@@ -8,7 +8,10 @@ document.querySelector('button').addEventListener('click',  function() {
     var amount = Number(document.querySelector('#amount').value)
     var intrest = 0;
     if(days==365) days += 1;
-    else if(days % 2 == 0) days += 1;
+    else if(days % 2 == 0) {
+        console.log(true);
+        days += 1;
+    }
     document.querySelector('#days').textContent = days;
     while(days>366) {
         if(amount >= 20000) {
@@ -29,5 +32,6 @@ document.querySelector('button').addEventListener('click',  function() {
     document.querySelector('#intrest').textContent = `Intrest: ${intrest}`;
     document.querySelector('#total-amount').textContent = `Total Amount: ${total_amount}`;
 });
+
 
 
