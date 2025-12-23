@@ -23,7 +23,6 @@ document.querySelector('button').addEventListener('click',  function() {
     } else {
         intrest += Math.round((amount + intrest) * 0.03 / 30.5 * days);
     }
-    if(intrest % 10 < 5)
     var total_amount = amount + intrest;
     document.querySelector('.amount').textContent = `Amount: ${amount}`;
     document.querySelector('#intrest').textContent = `Intrest: ${intrest}`;
